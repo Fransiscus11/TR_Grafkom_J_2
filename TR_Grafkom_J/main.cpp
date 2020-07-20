@@ -19,20 +19,30 @@
 void init(void);
 void hasil(void);
 void keyboard(unsigned char, int, int);
+void mouse(int button, int state, int x, int y);
 void ukuran(int, int);
+void mouseMotion(int x, int y);
 
+float xrot = 0.0f;
+float yrot = 0.0f;
+float xdiff = 0.0f;
+float ydiff = 0.0f;
+bool mouseDown = false;
 int is_depth;
 
 void init(void)
 {
     glClearColor(0.0, 0.0, 0.0, 0.0);
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_LIGHTING);
+    glEnable(GL_COLOR_MATERIAL);
+    glEnable(GL_LIGHT0);
+    glEnable(GL_DEPTH_TEST);
     is_depth = 1;
     glMatrixMode(GL_MODELVIEW);
     glPointSize(6.0);
     glLineWidth(3.0f);
 }
-
 void gedungdalam()
 {
     ///gedungdalam1
@@ -587,193 +597,6 @@ void gedungdalam()
     glVertex3f(26.0,-35.0,-17.5);
     glEnd();
 }
-
-void garisdepan()
-{
-    /*
-    glBegin(GL_LINES);
-    glColor3f(1.0, 1.0, 0.5);
-    glVertex3f(-44.5, -10.5, 10.0);
-    glVertex3f(-44.5, -5.0, 10.0);
-    glVertex3f(-44.0, -10.5, 10.0);
-    glVertex3f(-44.0, -5.0, 10.0);
-
-    glVertex3f(-43.5, -10.5, 10.0);
-    glVertex3f(-43.5, -5.0, 10.0);
-    glVertex3f(-43.0, -10.5, 10.0);
-    glVertex3f(-43.0, -5.0, 10.0);
-
-    glVertex3f(-42.5, -10.5, 10.0);
-    glVertex3f(-42.5, -5.0, 10.0);
-    glVertex3f(-42.0, -10.5, 10.0);
-    glVertex3f(-42.0, -5.0, 10.0);
-
-    glVertex3f(-41.5, -10.5, 10.0);
-    glVertex3f(-41.5, -5.0, 10.0);
-    glVertex3f(-41.0, -10.5, 10.0);
-    glVertex3f(-41.0, -5.0, 10.0);
-
-    glVertex3f(-40.5, -10.5, 10.0);
-    glVertex3f(-40.5, -5.0, 10.0);
-    glVertex3f(-40.0, -10.5, 10.0);
-    glVertex3f(-40.0, -5.0, 10.0);
-
-    glVertex3f(-39.5, -10.5, 10.0);
-    glVertex3f(-39.5, -5.0, 10.0);
-    glVertex3f(-39.0, -10.5, 10.0);
-    glVertex3f(-39.0, -5.0, 10.0);
-
-    glVertex3f(-38.5, -10.5, 10.0);
-    glVertex3f(-38.5, -5.0, 10.0);
-    glVertex3f(-38.0, -10.5, 10.0);
-    glVertex3f(-38.0, -5.0, 10.0);
-
-    glVertex3f(-37.5, -10.5, 10.0);
-    glVertex3f(-37.5, -5.0, 10.0);
-    glVertex3f(-37.0, -10.5, 10.0);
-    glVertex3f(-37.0, -5.0, 10.0);
-
-    glVertex3f(-36.5, -10.5, 10.0);
-    glVertex3f(-36.5, -5.0, 10.0);
-    glVertex3f(-36.0, -10.5, 10.0);
-    glVertex3f(-36.0, -5.0, 10.0);
-
-    glVertex3f(-35.5, -10.5, 10.0);
-    glVertex3f(-35.5, -5.0, 10.0);
-    glVertex3f(-35.0, -10.5, 10.0);
-    glVertex3f(-35.0, -5.0, 10.0);
-
-    glVertex3f(-34.5, -10.5, 10.0);
-    glVertex3f(-34.5, -5.0, 10.0);
-    glVertex3f(-34.0, -10.5, 10.0);
-    glVertex3f(-34.0, -5.0, 10.0);
-
-    glVertex3f(-33.5, -10.5, 10.0);
-    glVertex3f(-33.5, -5.0, 10.0);
-    glVertex3f(-33.0, -10.5, 10.0);
-    glVertex3f(-33.0, -5.0, 10.0);
-
-    glVertex3f(-32.5, -10.5, 10.0);
-    glVertex3f(-32.5, -5.0, 10.0);
-    glVertex3f(-32.0, -10.5, 10.0);
-    glVertex3f(-32.0, -5.0, 10.0);
-
-    glVertex3f(-31.5, -10.5, 10.0);
-    glVertex3f(-31.5, -5.0, 10.0);
-    glVertex3f(-31.0, -10.5, 10.0);
-    glVertex3f(-31.0, -5.0, 10.0);
-
-    glVertex3f(-30.5, -10.5, 10.0);
-    glVertex3f(-30.5, -5.0, 10.0);
-    glVertex3f(-30.0, -10.5, 10.0);
-    glVertex3f(-30.0, -5.0, 10.0);
-
-    glVertex3f(-29.5, -10.5, 10.0);
-    glVertex3f(-29.5, -5.0, 10.0);
-    glVertex3f(-29.0, -10.5, 10.0);
-    glVertex3f(-29.0, -5.0, 10.0);
-
-    glVertex3f(-28.5, -10.5, 10.0);
-    glVertex3f(-28.5, -5.0, 10.0);
-    glVertex3f(-28.0, -10.5, 10.0);
-    glVertex3f(-28.0, -5.0, 10.0);
-
-    glVertex3f(-27.5, -10.5, 10.0);
-    glVertex3f(-27.5, -5.0, 10.0);
-    glEnd();
-
-    glBegin(GL_LINES);
-    glVertex3f(-44.5, -17.5, 10.0);
-    glVertex3f(-44.5, -12.0, 10.0);
-    glVertex3f(-44.0, -17.5, 10.0);
-    glVertex3f(-44.0, -12.0, 10.0);
-
-    glVertex3f(-43.5, -17.5, 10.0);
-    glVertex3f(-43.5, -12.0, 10.0);
-    glVertex3f(-43.0, -17.5, 10.0);
-    glVertex3f(-43.0, -12.0, 10.0);
-
-    glVertex3f(-42.5, -17.5, 10.0);
-    glVertex3f(-42.5, -12.0, 10.0);
-    glVertex3f(-42.0, -17.5, 10.0);
-    glVertex3f(-42.0, -12.0, 10.0);
-
-    glVertex3f(-41.5, -17.5, 10.0);
-    glVertex3f(-41.5, -12.0, 10.0);
-    glVertex3f(-41.0, -17.5, 10.0);
-    glVertex3f(-41.0, -12.0, 10.0);
-
-    glVertex3f(-40.5, -17.5, 10.0);
-    glVertex3f(-40.5, -12.0, 10.0);
-    glVertex3f(-40.0, -17.5, 10.0);
-    glVertex3f(-40.0, -12.0, 10.0);
-
-    glVertex3f(-39.5, -17.5, 10.0);
-    glVertex3f(-39.5, -12.0, 10.0);
-    glVertex3f(-39.0, -17.5, 10.0);
-    glVertex3f(-39.0, -12.0, 10.0);
-
-    glVertex3f(-38.5, -17.5, 10.0);
-    glVertex3f(-38.5, -12.0, 10.0);
-    glVertex3f(-38.0, -17.5, 10.0);
-    glVertex3f(-38.0, -12.0, 10.0);
-
-    glVertex3f(-37.5, -17.5, 10.0);
-    glVertex3f(-37.5, -12.0, 10.0);
-    glVertex3f(-37.0, -17.5, 10.0);
-    glVertex3f(-37.0, -12.0, 10.0);
-
-    glVertex3f(-36.5, -17.5, 10.0);
-    glVertex3f(-36.5, -12.0, 10.0);
-    glVertex3f(-36.0, -17.5, 10.0);
-    glVertex3f(-36.0, -12.0, 10.0);
-
-    glVertex3f(-35.5, -17.5, 10.0);
-    glVertex3f(-35.5, -12.0, 10.0);
-    glVertex3f(-35.0, -17.5, 10.0);
-    glVertex3f(-35.0, -12.0, 10.0);
-
-    glVertex3f(-34.5, -17.5, 10.0);
-    glVertex3f(-34.5, -12.0, 10.0);
-    glVertex3f(-34.0, -17.5, 10.0);
-    glVertex3f(-34.0, -12.0, 10.0);
-
-    glVertex3f(-33.5, -17.5, 10.0);
-    glVertex3f(-33.5, -12.0, 10.0);
-    glVertex3f(-33.0, -17.5, 10.0);
-    glVertex3f(-33.0, -12.0, 10.0);
-
-    glVertex3f(-32.5, -17.5, 10.0);
-    glVertex3f(-32.5, -12.0, 10.0);
-    glVertex3f(-32.0, -17.5, 10.0);
-    glVertex3f(-32.0, -12.0, 10.0);
-
-    glVertex3f(-31.5, -17.5, 10.0);
-    glVertex3f(-31.5, -12.0, 10.0);
-    glVertex3f(-31.0, -17.5, 10.0);
-    glVertex3f(-31.0, -12.0, 10.0);
-
-    glVertex3f(-30.5, -17.5, 10.0);
-    glVertex3f(-30.5, -12.0, 10.0);
-    glVertex3f(-30.0, -17.5, 10.0);
-    glVertex3f(-30.0, -12.0, 10.0);
-
-    glVertex3f(-29.5, -17.5, 10.0);
-    glVertex3f(-29.5, -12.0, 10.0);
-    glVertex3f(-29.0, -17.5, 10.0);
-    glVertex3f(-29.0, -12.0, 10.0);
-
-    glVertex3f(-28.5, -17.5, 10.0);
-    glVertex3f(-28.5, -12.0, 10.0);
-    glVertex3f(-28.0, -17.5, 10.0);
-    glVertex3f(-28.0, -12.0, 10.0);
-
-    glVertex3f(-27.5, -19.0, 10.0);
-    glVertex3f(-27.5, -12.0, 10.0);
-    glEnd();
-    */
-}
-
 void depan()
 {
     ///bolongan kiri
@@ -1101,7 +924,6 @@ void depan()
     glVertex3f(-45.0, -35.0, 5.0);
     glEnd();
 }
-
 void sampingkanan()
 {
     glBegin(GL_QUADS);
@@ -1140,7 +962,6 @@ void sampingkanan()
     glVertex3f(-10.0, -20.0, -10.0);
     glEnd();
 }
-
 void belakang()
 {
     glBegin(GL_QUADS);
@@ -1174,7 +995,6 @@ void belakang()
     glVertex3f(-10.0, -19.0, -45.5);
     glEnd();
 }
-
 void sampingkiri()
 {
     glBegin(GL_QUADS);
@@ -1208,7 +1028,6 @@ void sampingkiri()
     glVertex3f(-62.0, -20.0, -30.0);
     glEnd();
 }
-
 void lantai()
 {
     glBegin(GL_QUADS);
@@ -1219,7 +1038,6 @@ void lantai()
     glVertex3f(-62.0, -35.0, -45.5);
     glEnd();
 }
-
 void atap()
 {
     glBegin(GL_QUADS);
@@ -1306,27 +1124,73 @@ void atap()
     glVertex3f(-50.0, 65.0, 0.0);
     glEnd();
 }
+void gedungkanan(){
+    ///gedungkecil
+    glBegin(GL_QUADS);
+    /*glColor3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(-10.0, 40.0, 10.0);
+    glVertex3f(-10.0, 39.0, 10.0);
+    glVertex3f(-10.0, 39.0, -45.5);
+    glVertex3f(-10.0, 40.0, -45.5);*/
+    glColor4f(1.0f, 0.0f, 0.0f, 1.0f);
+    glVertex3f(27.0,-19.0,0.0);
+    glVertex3f(27.0,-19.0,-35.0);
+    glVertex3f(27.0,-35.0,-35.0);
+    glVertex3f(27.0,-35.0,0.0);
+    glEnd();
+
+
+}
+
 
 void hasil(void)
 {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glLoadIdentity();
+    gluLookAt(0.0f, 0.0f, 3.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f);
+    glRotatef(xrot, 1.0f, 0.0f, 0.0f);
+    glRotatef(yrot, 0.0f, 1.0f, 0.0f);
     if(is_depth)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     else
     glClear(GL_COLOR_BUFFER_BIT);
-    
-    gedungdalama();
+
+    gedungdalam();
     depan();
     sampingkanan();
     belakang();
     sampingkiri();
     lantai();
     atap();
+    gedungkanan();
 
     glPushMatrix();
     glPopMatrix();
     glutSwapBuffers();
 }
 
+void idle(){
+if(!mouseDown){
+    xrot += 0.3f;
+    yrot += 0.4f;}
+    glutPostRedisplay();
+}
+void mouse(int button, int state, int x, int y){
+    if(button == GLUT_LEFT_BUTTON && state == GLUT_DOWN){
+        mouseDown = true;
+        xdiff = x - yrot;
+        ydiff = -y + xrot;
+    }
+else
+    mouseDown = false;
+}
+void mouseMotion(int x, int y){
+    if (mouseDown){
+    yrot = x - xdiff;
+    xrot = y + ydiff;
+    glutPostRedisplay();
+}
+}
 void keyboard(unsigned char key, int x, int y)
 {
     switch (key)
@@ -1408,6 +1272,9 @@ int main (int argc, char **argv)
     glutDisplayFunc(hasil);
     glutKeyboardFunc(keyboard);
     glutReshapeFunc(ukuran);
+    glutMouseFunc(mouse);
+    glutMotionFunc(mouseMotion);
+    glutIdleFunc(hasil);
     glutMainLoop();
     return 0;
 }
