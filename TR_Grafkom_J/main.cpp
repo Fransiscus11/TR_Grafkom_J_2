@@ -46,27 +46,10 @@ void gedungdalam(){
     ///gedungdalam1
     glBegin(GL_QUADS);
     glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
-    glVertex3f(-62.0,-35.0,5.0);
-    glVertex3f(-62.0,-19.0,5.0);
+    glVertex3f(-45.0,-35.0,5.0);
+    glVertex3f(-45.0,-19.0,5.0);
     glVertex3f(-10.0,-19.0,5.0);
     glVertex3f(-10.0,-35.0,5.0);
-    glEnd();
-
-
-    glBegin(GL_QUADS);
-    glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
-    glVertex3f(-40.0,-19.0,-40.0);
-    glVertex3f(-10.0,-19.0,-40.0);
-    glVertex3f(-10.0,-19.0,5.0);
-    glVertex3f(-40.0,-19.0,5.0);
-    glEnd();
-
-    glBegin(GL_QUADS);
-    glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
-    glVertex3f(-62.0,-19.0,-40.0);
-    glVertex3f(-40.0,-19.0,-40.0);
-    glVertex3f(-40.0,-19.0,-10.0);
-    glVertex3f(-62.0,-19.0,-10.0);
     glEnd();
 
     glBegin(GL_QUADS);
@@ -76,23 +59,7 @@ void gedungdalam(){
     glVertex3f(-10.0,-35.0,-40.0);
     glVertex3f(-10.0,-35.0,5.0);
     glEnd();
-
-    glBegin(GL_QUADS);
-    glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
-    glVertex3f(-62.0,-19.0,0.0);
-    glVertex3f(-30.0,-19.0,0.0);
-    glVertex3f(-30.0,-19.0,5.0);
-    glVertex3f(-62.0,-19.0,5.0);
-    glEnd();
-
-    glBegin(GL_QUADS);
-    glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
-    glVertex3f(-62.0,-19.0,-10.0);
-    glVertex3f(-40.0,-19.0,-10.0);
-    glVertex3f(-40.0,-19.0,10.0);
-    glVertex3f(-62.0,-19.0,10.0);
-    glEnd();
-
+    
     ///gedungkecil
     glBegin(GL_QUADS);
     glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
