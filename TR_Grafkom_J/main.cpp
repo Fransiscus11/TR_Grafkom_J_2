@@ -2001,14 +2001,21 @@ void belakangbawah(){
     glVertex3f(-26.5, -34.0, -34.0);
     glEnd();
 
+    int y = 0;
+    ///atas
+    for(int a=0; a<4; a++){
+        glBegin(GL_QUADS);
+        glColor3f(0.5f, 0.5f, 0.5f);
+        glVertex3f(-62.0, -19.1+y, 0.0);
+        glVertex3f(-10.0, -19.1+y, 0.0);
+        glVertex3f(-10.0, -19.1+y, -45.5);
+        glVertex3f(-62.0, -19.1+y, -45.5);
+        glEnd();
+        y+=15;
+    }
+
     glBegin(GL_QUADS);
     glColor3f(0.5f, 0.5f, 0.5f);
-    ///atas
-    glVertex3f(-62.0, -19.1, 10.0);
-    glVertex3f(-10.0, -19.1, 10.0);
-    glVertex3f(-10.0, -19.1, -45.5);
-    glVertex3f(-62.0, -19.1, -45.5);
-
     ///depan
     ///horizontal
     glVertex3f(-36.0, -19.0, -11.5);
