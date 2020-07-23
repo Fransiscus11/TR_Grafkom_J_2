@@ -53,6 +53,20 @@ void gedungdalam(){
     glEnd();
 
     glBegin(GL_QUADS);
+    glColor4f(0.0f, 0.0f, 0.0f, 0.0f);
+    glVertex3f(-26.0,-35.0,5.5);
+    glVertex3f(-26.0,-21.0,5.5);
+    glVertex3f(-14.0,-21.0,5.5);
+    glVertex3f(-14.0,-35.0,5.5);
+    glEnd();
+
+    glBegin(GL_LINES);
+    glColor3f(1.0,1.0,1.0);
+    glVertex3f(-20.0,-21.0,6.0);
+    glVertex3f(-20.0,-35.0,6.0);
+    glEnd();
+
+    glBegin(GL_QUADS);
     glColor4f(0.0f, 1.0f, 1.0f, 1.0f);
     glVertex3f(-10.0,-19.0,5.0);
     glVertex3f(-10.0,-19.0,-40.0);
