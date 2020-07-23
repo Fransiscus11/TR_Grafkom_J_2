@@ -3785,8 +3785,82 @@ void tangga (void)
     glVertex3f(100.0, -47.0, 31.0);
     glVertex3f(62.0, -47.0, 31.0);
     glEnd();
-
 }
+
+void objek(){
+    ///papan tulis
+    glBegin(GL_QUADS);
+    glColor3f(1.0,1.0,1.0);
+    glVertex3f(70.0, 0.0, -40.0);
+    glVertex3f(87.0, 0.0, -40.0);
+    glVertex3f(87.0, -17.0, -40.0);
+    glVertex3f(70.0, -17.0, -40.0);
+
+    glColor3f(0.0,0.0,0.0);
+    glVertex3f(70.0, 0.0, -40.0);
+    glVertex3f(87.0, 0.0, -40.0);
+    glVertex3f(87.0, 1.0, -40.0);
+    glVertex3f(70.0, 1.0, -40.0);
+
+    glVertex3f(70.0, 1.0, -40.0);
+    glVertex3f(71.0, 1.0, -40.0);
+    glVertex3f(71.0, -34.0, -40.0);
+    glVertex3f(70.0, -34.0, -40.0);
+
+    glVertex3f(87.0, 1.0, -40.0);
+    glVertex3f(88.0, 1.0, -40.0);
+    glVertex3f(88.0, -34.0, -40.0);
+    glVertex3f(87.0, -34.0, -40.0);
+
+    glVertex3f(70.0, -17.0, -40.0);
+    glVertex3f(87.0, -17.0, -40.0);
+    glVertex3f(87.0, -18.0, -40.0);
+    glVertex3f(70.0, -18.0, -40.0);
+
+    ///kiri
+    glVertex3f(70.0, -34.0, -42.0);
+    glVertex3f(71.0, -34.0, -42.0);
+    glVertex3f(71.0, -34.0, -38.0);
+    glVertex3f(70.0, -34.0, -38.0);
+
+    glVertex3f(70.0, -35.0, -42.0);
+    glVertex3f(71.0, -35.0, -42.0);
+    glVertex3f(71.0, -35.0, -38.0);
+    glVertex3f(70.0, -35.0, -38.0);
+
+    glVertex3f(70.0, -35.0, -38.0);
+    glVertex3f(71.0, -35.0, -38.0);
+    glVertex3f(71.0, -34.0, -38.0);
+    glVertex3f(70.0, -34.0, -38.0);
+
+    glVertex3f(70.0, -35.0, -42.0);
+    glVertex3f(71.0, -35.0, -42.0);
+    glVertex3f(71.0, -34.0, -42.0);
+    glVertex3f(70.0, -34.0, -42.0);
+
+    ///kanan
+    glVertex3f(87.0, -34.0, -42.0);
+    glVertex3f(88.0, -34.0, -42.0);
+    glVertex3f(88.0, -34.0, -38.0);
+    glVertex3f(87.0, -34.0, -38.0);
+
+    glVertex3f(87.0, -35.0, -42.0);
+    glVertex3f(88.0, -35.0, -42.0);
+    glVertex3f(88.0, -35.0, -38.0);
+    glVertex3f(87.0, -35.0, -38.0);
+
+    glVertex3f(87.0, -35.0, -38.0);
+    glVertex3f(88.0, -35.0, -38.0);
+    glVertex3f(88.0, -34.0, -38.0);
+    glVertex3f(87.0, -34.0, -38.0);
+
+    glVertex3f(87.0, -35.0, -42.0);
+    glVertex3f(88.0, -35.0, -42.0);
+    glVertex3f(88.0, -34.0, -42.0);
+    glVertex3f(87.0, -34.0, -42.0);
+    glEnd();
+}
+
 void hasil(void){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glPushMatrix();
@@ -3800,15 +3874,16 @@ void hasil(void){
 
     depan();
     garisdepan();
-    gedungdalam();
     sampingkanan();
     belakang();
     sampingkiri();
     belakangbawah();
-    lantai();
+    gedungdalam();
     atap();
-    gedungkanan();
     kaca();
+    gedungkanan();
+    lantai();
+    objek();
     tugu();
     tangga();
 
