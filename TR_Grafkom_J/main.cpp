@@ -36,8 +36,7 @@ float ydiff = 0.0f;
 bool mouseDown = false;
 int is_depth;
 
-void warna(int)
-{
+void warna(int){
     if (pattern1) {
 		pattern1 = false;
 		pattern2 = true;
@@ -128,7 +127,6 @@ void gedungdalam(){
     glEnd();
 
     ///kaca depan
-
     glBegin(GL_LINES);
     glColor3f(0.3f, 0.3f, 0.3f);
     glVertex3f(-62.0,-19.0,5.0);
@@ -2342,7 +2340,6 @@ void lantai(){
     glVertex3f(50.0, -40.0, 21.0);
     glVertex3f(62.0, -40.0, 21.0);
     glEnd();
-
 }
 
 void atap(){
@@ -2441,14 +2438,6 @@ void gedungkanan(){
     glVertex3f(50.0,-35.0,-45.0);
     glVertex3f(50.0,-35.0,10.0);
     glEnd();
-    //bawah
-    glBegin(GL_QUADS);
-    glColor4f(1.0f, 1.0f, 0.0f, 1.0f);
-    glVertex3f(50.0,-35.0,10.0);
-    glVertex3f(50.0,-35.0,-45.0);
-    glVertex3f(100.0,-35.0,-45.0);
-    glVertex3f(100.0,-35.0,10.0);
-    glEnd();
     //belakang
     glBegin(GL_QUADS);
     glColor3f(0.5, 0.5, 0.5);
@@ -2467,11 +2456,21 @@ void gedungkanan(){
     glEnd();
     //depan
     glBegin(GL_QUADS);
-    glColor3f(0.5, 0.5, 0.5);
-    glVertex3f(100.0,15.0,10.0);
+    glColor3f(0.5f, 0.5f, 0.5f);
+    glVertex3f(65.0,15.0,10.0);
     glVertex3f(50.0,15.0,10.0);
     glVertex3f(50.0,-35.0,10.0);
+    glVertex3f(65.0,-35.0,10.0);
+
+    glVertex3f(65.0,15.0,10.0);
+    glVertex3f(85.0,15.0,10.0);
+    glVertex3f(85.0,0.0,10.0);
+    glVertex3f(65.0,0.0,10.0);
+
+    glVertex3f(85.0,15.0,10.0);
+    glVertex3f(100.0,15.0,10.0);
     glVertex3f(100.0,-35.0,10.0);
+    glVertex3f(85.0,-35.0,10.0);
     glEnd();
     //atas
     glBegin(GL_QUADS);
@@ -3339,14 +3338,9 @@ void tugu (void)
     glVertex3f(45.0,-35.0,8.0);
     glVertex3f(47.0,-35.0,8.0);
     glEnd();
-
-
-
 }
 
-void tangga (void)
-{
-
+void tangga (void){
     //tangga1
     glBegin(GL_QUADS);
     glColor3f(0.1,0.1,0.1);
